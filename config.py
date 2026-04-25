@@ -2,7 +2,7 @@ import os
 
 
 class Config:
-    SQLARCHERMY_DATABASE = os.getenv(
+    SQLALCHEMY_DATABASE_URI = os.getenv(
         "DATABASE_URL", "mysql+pymysql://root:@localhost/examen"
     );
     SQLALCHERMY_TRACK_MODIFICATIONS = False
