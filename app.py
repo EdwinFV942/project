@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from config import Config
+from routes.user import user_bp
 
 db = SQLAlchemy()
 
@@ -10,7 +11,8 @@ def create_app():
     app.config.from_object(Config)
     
     db.init_app(app)
-    
+    from routes.user import user_bp
+    app.register_blueprint(user_bp)
     
     @app.route('/')
     def home():
